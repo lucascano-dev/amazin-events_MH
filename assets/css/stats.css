@@ -1,0 +1,17 @@
+main{
+    min-height: 80vh;
+  }
+  
+thead{
+
+    background-color: beige;
+    color: brown;
+    text-align: center;
+}
+
+tbody{
+    background-color: #dbdbdbdb;
+    color: rgb(134, 42, 165);
+    text-align: center;
+    font-size: larger;
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,38 +8,174 @@
     <title>Amazin Events</title>
 
     <!-- Bootstrap 5.3 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <!-- FontAwasome 6.4 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Favicon -->
-    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
     <!-- Nuestros CSS -->
-    <link rel="stylesheet" href="./assets/css/header.css">
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/stats.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
 
 </head>
 
 
 <body>
-
-
     <header>
-<h1>header</h1>
-</header>    
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid bg-danger-subtle">
+                <a class="navbar-brand" href="../../index.html">
+                    <img class="img-fluid" src="../assets/img/Logo Amazing Events.png" alt="Logo Amazing Events">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarHeader">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="./upcoming.html">Upcomming Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="./past.html">Past Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  active" aria-current="page" href="#">Stat</a>
+                        </li>
 
-<main>
-<h2>main</h2>
-</main>
+                    </ul>
 
-<footer>
-<h3>footer</h3>
-</footer>
+                </div>
+            </div>
+        </nav>
 
-<!-- Bootstrap 5.3 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    </header>
 
-<!-- Javascript nuestro -->
-<script src="./assets/js/main.js"></script>
+    <main>
+        <section id="slider">
+            <div class="boton-slider">
+                <a href="./contact.html">
+                    <h2><i class="fa-solid fa-circle-arrow-left"></i></h2>
+                </a>
+            </div>
+            <div>
+                <h1>Stats</h1>
+            </div>
+            <div class="boton-slider">
+                <a href="../index.html">
+                    <h2><i class="fa-solid fa-circle-arrow-right"></i></h2>
+                </a>
+            </div>
+        </section>
+
+
+        <section class="stats">
+            <!-- ATTENDANCE  -->
+            <h2 class="bg-secondary text-light">Events statistics</h2>
+            <table class="table table-striped ">
+                <thead>
+                    <th>Events with the highest percentage of attendance</th>
+                    <th>Events with the lowest percentage of attendance</th>
+                    <th>Events with larger capacity</th>
+                </thead>
+                <tbody >
+                    <tr >
+                        <td>.a.b.c</td>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>Lorem ipsum dolor sit.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- UPCOMMING by CATEGORY -->
+            <h2 class="bg-secondary text-light">Upcoming events statistics by category
+            </h2>
+            <table class="table table-striped ">
+                <thead >
+                    <th >Categories</th>
+                    <th >Revenues</th>
+                    <th >Percentage of attendance</th>
+                </thead>
+                <tbody>
+                    <tr >
+                        <td>.a.b.c</td>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>Lorem ipsum dolor sit.</td>
+                    </tr>
+                    <tr >
+                        <td>.a.b.c</td>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>Lorem ipsum dolor sit.</td>
+                    </tr>
+                    <tr >
+                        <td>.a.b.c</td>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>Lorem ipsum dolor sit.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- PAST by CATEGORY -->
+            <h2 class="bg-secondary text-light">Past Events statistics by category</h2>
+            <table class="table table-striped ">
+                <thead >
+                    <th>Categories</th>
+                    <th>Revenues</th>
+                    <th>Percentage of attendance</th>
+                </thead>
+                <tbody>
+                    <tr >
+                        <td>.a.b.c</td>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>Lorem ipsum dolor sit.</td>
+                    </tr>
+                    <tr >
+                        <td>.a.b.c</td>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>Lorem ipsum dolor sit.</td>
+                    </tr>
+                    <tr >
+                        <td>.a.b.c</td>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>Lorem ipsum dolor sit.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <div id="footer-redes-sociales">
+            <i class="fa-brands fa-square-instagram alineacion"></i>
+            <i class="fa-brands fa-square-facebook alineacion"></i>
+            <i class="fa-brands fa-square-whatsapp alineacion"></i>
+        </div>
+
+        <div id="foot2">
+            <h2 class="alineacion">Cohort</h2>
+        </div>
+
+    </footer>
+
+    <!-- Bootstrap 5.3 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <!-- Javascript nuestro -->
+    <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
