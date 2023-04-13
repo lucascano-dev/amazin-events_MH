@@ -23,9 +23,7 @@
     justify-content: space-around;
 }
 
-#buscar input{
-    
-}
+
 
 #cards {
     display: flex;
@@ -34,6 +32,3 @@
     justify-content: space-evenly;
 }
 
-.card-img-top{
-    
-}
