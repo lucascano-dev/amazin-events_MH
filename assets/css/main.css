@@ -1,0 +1,39 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#slider {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    border: 2px solid #d90368;
+    ;
+}
+
+.boton-slider {
+    background-color: #d90368;
+}
+
+#check-search{
+    margin: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#buscar input{
+    
+}
+
+#cards {
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    justify-content: space-evenly;
+}
+
+.card-img-top{
+    
+}
