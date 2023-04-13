@@ -8,16 +8,35 @@
     padding: 30px;
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content: space-between;
     border: 2px solid #d90368;
-    ;
+    background: linear-gradient(90deg, rgba(217, 3, 104, 0.9) 20%, rgba(217, 3, 104, 0.7) 80%, rgba(217, 3, 104, 0.6) 90%);
 }
 
-.boton-slider {
-    background-color: #d90368;
+#slider h1 {
+    color: #ffffff;
 }
 
-#check-search{
+.boton-slider i {
+    font-size: 50px;
+    transition-duration: 300ms;
+    color: #ffffff;
+}
+
+.boton-slider i:hover {
+    transform: scale(1.2);
+    transition-duration: 300ms;
+    cursor: pointer;
+}
+
+#cuerpo-secundario{
+    padding: 10px;
+    background-color: #f6f6f6;
+    padding-bottom: 30px;
+    height: auto;
+}
+
+#check-search {
     margin: 30px;
     display: flex;
     justify-content: space-around;
@@ -28,7 +47,39 @@
 #cards {
     display: flex;
     flex-direction: row;
-    gap:20px;
+    gap: 20px;
     justify-content: space-evenly;
 }
 
+.card{
+    box-shadow: 10px 10px 3px #f0b0b0;
+}
+
+.card h1{
+    font-size: 2.3rem;
+    text-shadow: 3px 3px 3px #a8a6a6;
+}
+
+.card h2{
+    font-size: 2rem;
+}
+
+#comprar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#comprar p{
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#comprar a{
+    color: #ffffff;
+    font-weight: bolder;
+    background-color: #438670;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+}

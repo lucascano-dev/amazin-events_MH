@@ -1,0 +1,41 @@
+footer {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    background: linear-gradient(90deg, rgba(217, 3, 104, 0.9) 20%, rgba(217, 3, 104, 0.7) 80%, rgba(217, 3, 104, 0.6) 90%);
+
+}
+
+footer i, footer h2 {
+    font-size: 42px;
+    transition-duration: 300ms;
+    color:#ffffff;
+}
+
+footer h2{
+    text-shadow: 3px 3px 3px #4e4c4c;
+}
+
+footer i:hover,footer h2:hover {
+    transform: scale(1.2);
+    transition-duration: 300ms;
+    cursor: pointer;
+}
+
+#footer-redes-sociales {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+}
+
+#foot2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alineacion {
+    padding: 20px;
+}
