@@ -12,10 +12,10 @@ const accessData = fetch(myApiURL)
   .then((response) => response.json())
   .then((data) => {
     theCurrentDate = data.currentDate;
-    myEvents = retriveEvents([...data.events]);
+    myEvents = retriveEvents([...data.events], true);
     //recupero los eventos en myEvents
     // console.log(retriveEvents([...data.events]));        //TODOS
-    // console.log(retriveEvents([...data.events],true));   //PASADOS
+     console.log(retriveEvents([...data.events],true));   //PASADOS
     // console.log(retriveEvents([...data.events],false));  //FUTUROS
     const paintCards = (myEvents) => {
       myCards.innerHTML = myEvents.reduce((html, cat) => {
@@ -27,26 +27,25 @@ const accessData = fetch(myApiURL)
                     <a href="./detail.html">
                         <img src="${cat.image}" 
                              class="card-img-top"   
-                             alt="${cat.name}">
+                             alt="${cat.description}">
                     </a>
                 </div>
                 <div class="card-body">
-                    <h2 class="card-body">Gran Maratón</h2>
-                    <p class="h5">42K Buenos Aires</p>
+                    <p class="badge bg-success w-50 ">${cat.category}</p>
+                    <p class="card-body h3">${cat.name}</p>
+                    <p class="fst-italic ">${cat.description}</p>
                 </div>
                 <div id="comprar" class="card-footer">
-                    <p class="card-text">Precio $2000.</p>
+                    <p class="card-text">$ ${cat.price}</p>
                     <a href="./detail.html">Comprar</a>
                 </div>
             </div>
             `
         );
-      });
+      }, "");
     };
 
-    // for (let i=0; i<myEvents.length; i++){
-    //     console.log(myEvents[i].name)
-    // }
+    paintCards(myEvents)
   });
 
 const retriveEvents = (arrayEvents, isPast) => {
