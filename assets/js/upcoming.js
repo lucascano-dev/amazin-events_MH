@@ -12,13 +12,14 @@ const accessData = fetch(myApiURL)
   .then((response) => response.json())
   .then((data) => {
     theCurrentDate = data.currentDate;
-    myEvents = retriveEvents([...data.events], true);
+    myEvents = retriveEvents([...data.events], false);
     //recupero los eventos en myEvents
     // console.log(retriveEvents([...data.events]));        //TODOS
     // console.log(retriveEvents([...data.events],true));   //PASADOS
     // console.log(retriveEvents([...data.events],false));  //FUTUROS
+
     const paintCards = (myEvents) => {
-      myCards.innerHTML = myEvents.reduce((html, cat) => {
+      myCards.innerHTML = myEvents.reduce((html, cat) => {   
         return (
           html +
             `
