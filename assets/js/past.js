@@ -58,6 +58,8 @@ const retriveEvents = (arrayEvents, isPast) => {
   }
 };
 
+
+
 /*
 let dd = data.currentDate;
 let eventos = data.events;

@@ -4,6 +4,8 @@ footer {
     grid-template-columns: 3fr 1fr;
     background: linear-gradient(90deg, rgba(217, 3, 104, 0.9) 20%, rgba(217, 3, 104, 0.7) 80%, rgba(217, 3, 104, 0.6) 90%);
 
+    
+
 }
 
 footer i, footer h2 {
