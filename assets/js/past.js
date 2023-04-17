@@ -15,7 +15,7 @@ const accessData = fetch(myApiURL)
     myEvents = retriveEvents([...data.events], true);
     //recupero los eventos en myEvents
     // console.log(retriveEvents([...data.events]));        //TODOS
-     console.log(retriveEvents([...data.events],true));   //PASADOS
+    // console.log(retriveEvents([...data.events],true));   //PASADOS
     // console.log(retriveEvents([...data.events],false));  //FUTUROS
     const paintCards = (myEvents) => {
       myCards.innerHTML = myEvents.reduce((html, cat) => {
@@ -58,24 +58,4 @@ const retriveEvents = (arrayEvents, isPast) => {
   }
 };
 
-/*
-let dd = data.currentDate;
-let eventos = data.events;
 
-console.log(`Fecha Actual --> ${dd}`);
-console.log("Los eventos: Pasados ");
-for (let i=0; i<eventos.length;i++){
-    if (eventos[i].date<=dd){
-        console.log( `Nº ${i+1}  ${eventos[i].name}
-         fecha ${eventos[i].date} `);
-    }
-}
-
-let lucas = "223"
-let leo = "111"
-
-if (lucas > leo){
-    console.log(`${lucas} es mayor que ${leo}`);
-}else {
-    console.log(`${lucas} NO es mayor que ${leo}`);
-}*/

@@ -12,7 +12,7 @@ const accessData = fetch(myApiURL)
   .then((response) => response.json())
   .then((data) => {
     theCurrentDate = data.currentDate;
-    myEvents = retriveEvents([...data.events]);
+    myEvents = retriveEvents([...data.events], false);
     //recupero los eventos en myEvents
     // console.log(retriveEvents([...data.events]));        //TODOS
     // console.log(retriveEvents([...data.events],true));   //PASADOS
