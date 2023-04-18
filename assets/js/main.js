@@ -18,24 +18,15 @@ const accessData = fetch(myApiURL)
     // PASO 3: PINTAR LAS CARDS 
     paintCards(myEvents)
 
+    // PASO 4: FILTRAR POR CATEGORIA
+
+    //eventos de los chebox e imput
+    allCategorys.addEventListener("change", todosLosFiltros);
+    buscador.addEventListener("keyup", todosLosFiltros);
+
+    // Funcion general 
+    filtrarCategoria(myEvents);
+
   });
 
-
-
-//Evento de escucha para input
-
-let buscador = document.getElementById("inputSearch"); //captura id=inputSarch
-
-buscador.addEventListener('keyup', () => { //keydown para filtrar cuando presione una tecla
-  //Si filtro tiene valor desde input, entonces vuelve a crear el html
-  let eventosFiltrados = myEvents.filter((miEvento) => {
-
-    return miEvento.name.toLowerCase().includes(buscador.value.toLowerCase()); //si le pongo llaves entonces debo usar return, caso contrario lo puedo hacer una sola linea al lado de la funcion flecha
-  });
-
-  console.log(eventosFiltrados);
-  paintCards(eventosFiltrados);
-
-
-})
 
