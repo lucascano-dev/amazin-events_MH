@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+html{
+    height: 100%; /*Altura completa del html: 100%: Esto lo hago para que al momento de hacer el footer quede completamente abajo  (Ver: margin-top:auto en footer)*/
+}
+
+body{ /*Esto lo hago para que al momento de hacer el footer quede completamente abajo (Ver: margin-top:auto en footer)*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
 #slider {
     padding: 30px;
     display: flex;
