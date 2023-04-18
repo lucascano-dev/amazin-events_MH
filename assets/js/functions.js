@@ -34,6 +34,8 @@ const retriveEvents = (arrayEvents, isPast) => {
     }
   };
 
+  
+
   /**
    * Pinta las categorias en los checkbox
    * @param {*} categoria --> array con las categorias
@@ -88,3 +90,11 @@ const retriveEvents = (arrayEvents, isPast) => {
   };
 
 
+/**
+ * Esta funcion es para bla
+ * @param {*} pepe tipo string bla del pa
+ * @param {*} pipo 
+ */
+function aaaa(pepe, pipo){
+
+}
