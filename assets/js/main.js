@@ -45,10 +45,10 @@ const accessData = fetch(myApiURL)
         );
       }, "");
     };
-
+    
     paintCards(myEvents)
   });
-
+  
 const retriveEvents = (arrayEvents, isPast) => {
   if (isPast === undefined) {
     return arrayEvents;

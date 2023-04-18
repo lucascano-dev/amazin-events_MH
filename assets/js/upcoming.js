@@ -4,6 +4,7 @@ const myApiURL = "https://mindhub-xj03.onrender.com/api/amazing";
 // manejo del DOM
 const myCards = document.querySelector("#cards");
 const myCategorys = document.querySelector("#check-search");
+const busquedaValor = document.querySelector("#buscador");
 
 // variable que necesito
 let theCurrentDate = "";
@@ -100,3 +101,30 @@ const retriveEvents = (arrayEvents, isPast) => {
 };
 
 
+//Filtro desde buscador
+const categorias = myEvents.map( evento => evento.name);
+console.log("categorias recolectadas desde map");
+     console.log("Nombres de eventos");
+      console.log(busquedaValor);
+
+    const paintCategorys = (categoria) => {
+      busquedaValor.innerHTML = categoria.reduce((html,item) =>{
+        return (
+          html + 
+          `
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" 
+                  id="${item}" value="${item}">
+            <label class="form-check-label" 
+                  for="${item}">${item}</label>
+          </div>
+          `
+        );
+      }, "");
+    };
+    paintCategorys(categorias);
+
+
+    const myEventsFiltrado = ( (myEvents) => {
+      myEvents.filter( (evento) => evento)
+    }) 
