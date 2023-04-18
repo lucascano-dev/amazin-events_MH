@@ -18,16 +18,11 @@ const accessData = fetch(myApiURL)
 
     // PASO 4: FILTRAR POR CATEGORIA
 
-    
-
-    //eventos de los chebox
+    //eventos de los chebox e imput
     allCategorys.addEventListener("change", todosLosFiltros);
     buscador.addEventListener("keyup", todosLosFiltros);
 
+    // Funcion general 
     filtrarCategoria(myEvents);
-
-
-
-
 
   });

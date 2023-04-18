@@ -19,11 +19,17 @@ const accessData = fetch(myApiURL)
 
     // PASO 3: PINTAR LAS CATEGORIAS 
     paintCategorys(categorias);
-      // PASO 3: PINTAR LAS CARDS 
+    // PASO 3: PINTAR LAS CARDS 
     paintCards(myEvents)
 
+    // PASO 4: FILTRAR POR CATEGORIA
 
-    
+    //eventos de los chebox e imput
+    allCategorys.addEventListener("change", todosLosFiltros);
+    buscador.addEventListener("keyup", todosLosFiltros);
+
+    // Funcion general 
+    filtrarCategoria(myEvents);
 
   });
 
