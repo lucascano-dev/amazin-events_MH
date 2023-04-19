@@ -7,7 +7,7 @@ const accessData = fetch(myApiURL)
     //  undefinded -> Recupera todos
     //        true -> Recupera los Pasados
     //       false -> Recupera los Futuros
-    myEvents = retriveEvents([...data.events], false);
+    myEvents = retriveEvents([...data.events], true);
 
     // PASO 2: RECUPERO DE LAS CATEGORIAS
     const categorias = [...new Set(myEvents.map((evento) => evento.category))];
