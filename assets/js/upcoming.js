@@ -17,7 +17,6 @@ const accessData = fetch(myApiURL)
     paintCards(myEvents);
 
     // PASO 4: FILTRAR POR CATEGORIA
-<<<<<<< HEAD
     const allCategorys = document.querySelector('#check-search');
 
   
@@ -54,14 +53,4 @@ const accessData = fetch(myApiURL)
     filtrarCategoria(myEvents)
 
     
-=======
-
-    //eventos de los chebox e imput
-    allCategorys.addEventListener("change", todosLosFiltros);
-    buscador.addEventListener("keyup", todosLosFiltros);
-
-    // Funcion general 
-    filtrarCategoria(myEvents);
-
->>>>>>> 6c88d0dbfc166e0fe8b58d4ff2861a01a9052cb6
   });
