@@ -12,18 +12,29 @@ const accessData = fetch(myApiURL)
     console.log(elEvento);
 
     const detalleEvento = document.querySelector("#detail-card");
-
     detalleEvento.innerHTML = `
     <img src="${elEvento[0].image}" 
     class="img-fluid col-6" alt="${elEvento[0].description}">
     <div class="card-body col-6">
         <h1>${elEvento[0].name}</h1>
-
-        <p>${elEvento[0].description}</p>
+        <li class="list-inline-item me-0">
+        <h5>Lugar: ${elEvento[0].place}</h5>
+        <h6>Calificación</h6>
+      </li>
+        <li class="list-inline-item me-0">
+        <i class="fas fa-star text-warning fa-xs"></i>
+      </li>
+      <li class="list-inline-item me-0">
+        <i class="fas fa-star text-warning fa-xs"></i>
+      </li>
+      <li class="list-inline-item">
+        <i class="fas fa-star-half-alt text-warning fa-xs"></i>
+      </li>
+        <p class="card-description">${elEvento[0].description}</p>
 
         <div >
-            <p class="card-text">Precio $ ${elEvento[0].price}</p>
-            <a href="#">Comprar</a>
+            <p class="card-price">Precio $ ${elEvento[0].price}</p>
+            <a class="card-btn btn btn-danger" href="#" role="button">Comprar</a>
         </div>
     <div>
 `;
