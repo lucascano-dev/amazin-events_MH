@@ -53,8 +53,5 @@ const accessData = fetch(myApiURL)
 
     filtrarCategoria(myEvents)
 
-
-
-
-
+    
   });
