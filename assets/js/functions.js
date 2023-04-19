@@ -9,6 +9,8 @@ const myApiURL = "https://mindhub-xj03.onrender.com/api/amazing";
 // manejo del DOM
 const myCards = document.querySelector("#cards");
 const myCategorys = document.querySelector("#check-search");
+const allCategorys = document.querySelector("#check-search");
+const buscador = document.getElementById("inputSearch"); //captura id=inputSarch
 
 let theCurrentDate = "";    // fecha actual
 let myEvents = [];          // matriz de eventos
@@ -89,13 +91,49 @@ const retriveEvents = (arrayEvents, isPast) => {
     }, "");
   };
 
+const filtrarCategoria = (myEvents) => {
+  // recupera todos las los checkbox y 
+  // los convierte en array.
+  let arrayChecks = [...document.querySelectorAll("input[type='checkbox']")];
 
-/**
- * Esta funcion es para bla
- * @param {*} pepe tipo string bla del pa
- * @param {*} pipo 
- */
-function aaaa(pepe, pipo){
+  // filtra el array completo por los chequedos
+  let catergoryChecked = arrayChecks.filter(check => check.checked)
+ 
+  // si no hay categorias chequeadas, 
+  // devuelve todos los eventos (myEvents)
+  if (catergoryChecked.length==0) return myEvents;
 
+  // si hay al menos una, entonces
+  // recupera un array de los values chequeados
+  // para filtrar eventos.
+  let valuesChecked = catergoryChecked.map( check => check.value)
+
+  // filtra los eventos si el valuesChecked
+  // se incluye a la categoria de cada evento
+  return myEvents.filter(evento => 
+    valuesChecked.includes(evento.category))
+}
+
+
+const filtrarPorTexto = (arrayEventos, textSerch) => {
+  return arrayEventos.filter( evento => 
+    evento.name.toLowerCase().includes(textSerch.toLowerCase()))
+}
+
+
+const filtrarPorCheckbox =  (arrayEventos) =>{
+  return filtrarCategoria(arrayEventos);
+};
+
+const filtrarPorInput = (arrayEventos, textoABuscar) => {
+  return arrayEventos.filter( evento => 
+    evento.name.toLowerCase().includes(textoABuscar.toLowerCase()));
+  
+}
+
+const todosLosFiltros = () => {
+  let filtro1 = filtrarPorInput(myEvents, buscador.value);
+  let filtro2 = filtrarPorCheckbox(filtro1);
+  paintCards(filtro2);
 }
 

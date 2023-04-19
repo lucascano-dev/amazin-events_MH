@@ -5,7 +5,7 @@ const accessData = fetch(myApiURL)
     // PASO 1: RECUPERO DE LOS EVENTOS
     //  undefinded -> Recupera todos
     //        true -> Recupera los Pasados
-    //       false -> Recupera los Futuros        
+    //       false -> Recupera los Futuros
     myEvents = retriveEvents([...data.events], false);
 
     // PASO 2: RECUPERO DE LAS CATEGORIAS
@@ -16,8 +16,8 @@ const accessData = fetch(myApiURL)
     // PASO 3: PINTAR LAS CARDS
     paintCards(myEvents);
 
-
     // PASO 4: FILTRAR POR CATEGORIA
+<<<<<<< HEAD
     const allCategorys = document.querySelector('#check-search');
 
   
@@ -54,4 +54,14 @@ const accessData = fetch(myApiURL)
     filtrarCategoria(myEvents)
 
     
+=======
+
+    //eventos de los chebox e imput
+    allCategorys.addEventListener("change", todosLosFiltros);
+    buscador.addEventListener("keyup", todosLosFiltros);
+
+    // Funcion general 
+    filtrarCategoria(myEvents);
+
+>>>>>>> 6c88d0dbfc166e0fe8b58d4ff2861a01a9052cb6
   });
