@@ -92,7 +92,7 @@ const retriveEvents = (arrayEvents, isPast) => {
               </div>
               <div id="comprar" class="card-footer">
                   <p class="card-text">$ ${evento.price}</p>
-                  <a href="./detail.html">Comprar</a>
+                  <a href="./detail.html?id=${evento._id}">Comprar</a>
               </div>
           </div>
           `

@@ -2,6 +2,7 @@ const accessData = fetch(myApiURL)
   .then((response) => response.json())
   .then((data) => {
     theCurrentDate = data.currentDate;
+
     // PASO 1: RECUPERO DE LOS EVENTOS
     //  undefinded -> Recupera todos
     //        true -> Recupera los Pasados
@@ -17,13 +18,10 @@ const accessData = fetch(myApiURL)
     paintCards(myEvents);
 
     // PASO 4: FILTRAR POR CATEGORIA
-    const allCategorys = document.querySelector('#check-search');
+    allCategorys.addEventListener("change", todosLosFiltros);
+    buscador.addEventListener("keyup", todosLosFiltros);
 
-    allCategorys.addEventListener('change', ()=> {
-      const myEventsFiltraCheck =  filtrarCategoria(myEvents)
-      paintCards(myEventsFiltraCheck)
-    });
-    
-    filtrarCategoria(myEvents)
+    // Funcion general
+    filtrarCategoria();
    
   });
