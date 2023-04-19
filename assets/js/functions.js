@@ -26,7 +26,6 @@ let myEvents = [];          // matriz de eventos
     // console.log(retriveEvents([...data.events],false));  //FUTUROS
  */
 const retriveEvents = (arrayEvents, isPast) => {
-
     if (isPast === undefined) {
       return arrayEvents;
     } else if (isPast) {
@@ -91,7 +90,13 @@ const retriveEvents = (arrayEvents, isPast) => {
     }, "");
   };
 
-const filtrarCategoria = (myEvents) => {
+
+  /**
+   * Filtra los eventos por categorias marcados por los checkbox
+   * @param {*} arrayEvents   Lista de eventos que deben filtrarse
+   * @returns                 Eventos filtrados segun los checkbox
+   */
+const filtrarCategoria = (arrayEvents) => {
   // recupera todos las los checkbox y 
   // los convierte en array.
   let arrayChecks = [...document.querySelectorAll("input[type='checkbox']")];
@@ -101,7 +106,7 @@ const filtrarCategoria = (myEvents) => {
  
   // si no hay categorias chequeadas, 
   // devuelve todos los eventos (myEvents)
-  if (catergoryChecked.length==0) return myEvents;
+  if (catergoryChecked.length==0) return arrayEvents;
 
   // si hay al menos una, entonces
   // recupera un array de los values chequeados
@@ -110,30 +115,33 @@ const filtrarCategoria = (myEvents) => {
 
   // filtra los eventos si el valuesChecked
   // se incluye a la categoria de cada evento
-  return myEvents.filter(evento => 
+  return arrayEvents.filter(evento => 
     valuesChecked.includes(evento.category))
 }
 
 
-const filtrarPorTexto = (arrayEventos, textSerch) => {
-  return arrayEventos.filter( evento => 
-    evento.name.toLowerCase().includes(textSerch.toLowerCase()))
-}
-
-
-const filtrarPorCheckbox =  (arrayEventos) =>{
-  return filtrarCategoria(arrayEventos);
-};
-
+/**
+ * Filtra eventos donde en la propiedad name 
+ * contienepor un texto dado (textSearch).
+ * @param {*} arrayEventos  Lista de eventos a filtrar
+ * @param {*} textoABuscar     texto por el que se filtra en name
+ * @returns                 array de eventos ya filtrado
+ */
 const filtrarPorInput = (arrayEventos, textoABuscar) => {
   return arrayEventos.filter( evento => 
     evento.name.toLowerCase().includes(textoABuscar.toLowerCase()));
-  
 }
 
+
+/**
+ * Filtro combinado
+ * filtro1 = filtra por el texto y devuelve los eventos firltrados
+ * filtro2 = filtra por los checkbox a partir del filtro 1
+ * Pinta las card 
+ * */
 const todosLosFiltros = () => {
   let filtro1 = filtrarPorInput(myEvents, buscador.value);
-  let filtro2 = filtrarPorCheckbox(filtro1);
+  let filtro2 = filtrarCategoria(filtro1);
   paintCards(filtro2);
 }
 
