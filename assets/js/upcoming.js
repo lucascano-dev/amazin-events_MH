@@ -2,6 +2,7 @@ const accessData = fetch(myApiURL)
   .then((response) => response.json())
   .then((data) => {
     theCurrentDate = data.currentDate;
+
     // PASO 1: RECUPERO DE LOS EVENTOS
     //  undefinded -> Recupera todos
     //        true -> Recupera los Pasados
@@ -17,40 +18,10 @@ const accessData = fetch(myApiURL)
     paintCards(myEvents);
 
     // PASO 4: FILTRAR POR CATEGORIA
-    const allCategorys = document.querySelector('#check-search');
+    allCategorys.addEventListener("change", todosLosFiltros);
+    buscador.addEventListener("keyup", todosLosFiltros);
 
-  
-    allCategorys.addEventListener('change', ()=> {
-      const myEventsFiltraCheck =  filtrarCategoria(myEvents)
-      paintCards(myEventsFiltraCheck)
-    });
-
-    const filtrarCategoria = (myEvents) => {
-      // recupera todos las los checkbox y 
-      // los convierte en array.
-      let arrayChecks = [...document.querySelectorAll("input[type='checkbox']")];
-
-      // filtra el array completo por los chequedos
-      let catergoryChecked = arrayChecks.filter(check => check.checked)
-     
-      // si no hay categorias chequeadas, 
-      // devuelve todos los eventos (myEvents)
-      if (catergoryChecked.length==0) return myEvents;
-
-      // si hay al menos una, entonces
-      // recupera un array de los values chequeados
-      // para filtrar eventos.
-      let valuesChecked = catergoryChecked.map( check => check.value)
- 
-      
-      // filtra los eventos si el valuesChecked
-      // se incluye a la categoria de cada evento
-      return myEvents.filter(evento => 
-        valuesChecked.includes(evento.category))
-
-    }
-
-    filtrarCategoria(myEvents)
-
-    
+    // Funcion general
+    filtrarCategoria();
+   
   });

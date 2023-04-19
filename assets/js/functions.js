@@ -17,6 +17,16 @@ let myEvents = [];          // matriz de eventos
 
 
 /**
+ * kjfdklsfjdslkfdjsfk
+ * @param {*} parametro oflsdkjiflsdfjlsdkfj
+ */
+const qqq= (parametro) => {
+
+}
+
+
+
+/**
  * Permite filtrar los eventos según 
  * @param {*} arrayEvents "Array de eventos"
  * @param {*} isPast [undefined | true | false] = "todos | pasados | futuros"
@@ -82,7 +92,7 @@ const retriveEvents = (arrayEvents, isPast) => {
               </div>
               <div id="comprar" class="card-footer">
                   <p class="card-text">$ ${evento.price}</p>
-                  <a href="./detail.html">Comprar</a>
+                  <a href="./detail.html?id=${evento._id}">Comprar</a>
               </div>
           </div>
           `
