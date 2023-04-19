@@ -1,18 +1,74 @@
 main {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: baseline;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: baseline;
 
 }
 
+#cuerpo-secundario-detail{
+padding: 10px;
+background-color: rgb(218, 215, 215, 0.85);
+padding-bottom: 30px;
+height: auto;
+}
+
+#detail-card{
+height: auto;
+}
+
+.card {
+display: flex;
+flex-direction: row;
+width: 70vw;
+height: 50vh;
+margin-top: 10vh;
+box-shadow: 10px #c56363;
+border-radius: 30px;
+}
+
+
+@media (max-width: 900px) {
 .card {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   width: 60vw;
   height: 50vh;
   margin-top: 10vh;
-  box-shadow: 10px #f0b0b0;
+  box-shadow: 10px #c56363;
+  border-radius: 30px;
+}
+}
+
+.card img{
+margin:20px;
+border-radius: 30px;
+box-shadow: 4px 4px 4px #c56363;
+}
+
+.card-description{
+font-size: x-large;
+}
+.card-text{
+font-weight: 500;
+}
+
+.card-price{
+font-size: 2rem;
+font-weight: 800;
+}
+
+.card-btn{
+font-size: 1.3rem;
+transition-duration: 300ms;
+}
+
+.card-btn:hover{
+transform: scale(1.2);
+transition-duration: 300ms!important;
 }
