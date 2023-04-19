@@ -17,6 +17,16 @@ let myEvents = [];          // matriz de eventos
 
 
 /**
+ * kjfdklsfjdslkfdjsfk
+ * @param {*} parametro oflsdkjiflsdfjlsdkfj
+ */
+const qqq= (parametro) => {
+
+}
+
+
+
+/**
  * Permite filtrar los eventos según 
  * @param {*} arrayEvents "Array de eventos"
  * @param {*} isPast [undefined | true | false] = "todos | pasados | futuros"
