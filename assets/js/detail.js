@@ -1,14 +1,11 @@
-const queID = document.location.search;
-const idElegido = new URLSearchParams(queID).get("id");
+// Funciones que muestra los detalles de detail.html
+const idElegido = new URLSearchParams(window.location.search).get("id");
 
 const accessData = fetch(myApiURL)
   .then((response) => response.json())
   .then((data) => {
-    theCurrentDate = data.currentDate;
-
+    // Recupera el evento indicado con 
     const elEvento = data.events.filter((eve) => eve["_id"] == idElegido);
-    console.log(queID);
-    console.log(idElegido);
     console.log(elEvento);
 
     const detalleEvento = document.querySelector("#detail-card");
@@ -38,23 +35,40 @@ const accessData = fetch(myApiURL)
         </div>
     <div>
 `;
+});
 
-    /*
-    myEvents = retriveEvents([...data.events], false);
+  /**
+   * Información que contiene el evento
+   * ----------------------------------
+   * capacity: 50000,
+   * category: Food",
+   * date: "2023-10-12",
+   * description: "An invitation to enjoy Middle East's flavours.",
+   * estimate: 50000,
+   * image: https://i.postimg.cc/CxJQqX33/arabic.jpg",
+   * name: "Arabic holidays",
+   * place: "Multi Space",
+   * price: 0
+   * _id: 7
+   *
+   * */ 
 
-    // PASO 2: RECUPERO DE LAS CATEGORIAS
-    const categorias = [...new Set(myEvents.map((evento) => evento.category))];
+/**
+ * location 
+ * 
+ * ancestorOrigins: DOMStringList {length: 0}
+ * assign: ƒ assign()
+ * hash: ""
+ * host: "127.0.0.1:5500"
+ * hostname: "127.0.0.1"
+ * href: "http://127.0.0.1:5500/src/detail.html?id=7"
+ * origin: "http://127.0.0.1:5500"
+ * pathname: "/src/detail.html"
+ * port: "5500"
+ * protocol: "http:"
+ * reload: ƒ reload()
+ * replace: ƒ replace()
+ * search: "?id=7"
+ *    */
 
-    // PASO 3: PINTAR LAS CATEGORIAS
-    paintCategorys(categorias);
-    // PASO 3: PINTAR LAS CARDS
-    paintCards(myEvents);
 
-    // PASO 4: FILTRAR POR CATEGORIA
-    allCategorys.addEventListener("change", todosLosFiltros);
-    buscador.addEventListener("keyup", todosLosFiltros);
-
-    // Funcion general
-    filtrarCategoria();
-   */
-  });
