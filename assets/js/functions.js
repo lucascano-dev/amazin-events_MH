@@ -77,7 +77,7 @@ const retriveEvents = (arrayEvents, isPast) => {
       return (
         html +
           `
-          <div class="card col-xs-6 col-md-4 col-lg-3" style="width: 18rem;">
+          <div class="card col-xs-6 col-md-4 col-lg-3" ">
               <div class="card-header">
                   <a href="./detail.html">
                       <img src="${evento.image}" 

@@ -7,13 +7,15 @@ const esPasado = (eve) => eve.date <= currentDate;
 const accessData = fetch(myApiURL)
   .then((response) => response.json())
   .then((data) => {
-    // recorrer cada evento de data.events
-    // obtener información de
+    //Obtener los eventos Futuros y Pasados
+    const eventosPasados = data.events.filter(
+      (eve) => eve.date <= data.currentDate
+    );
+    const eventosFuturos = data.events.filter(
+      (eve) => eve.date > data.currentDate
+    );
 
-    currentDate = data.currentDate;
-    const pasados = data.events.filter((eve) => eve.date <= currentDate);
-
-    const asistencia = pasados.map(
+    const asistencia = eventosPasados.map(
       (eve) => (100 * eve.assistance) / eve.capacity
     );
 
@@ -21,27 +23,29 @@ const accessData = fetch(myApiURL)
     const menorAsistencia = Math.min(...asistencia);
     const indiceMayor = asistencia.findIndex((e) => e == mayorAsistencia);
     const indiceMenor = asistencia.findIndex((e) => e == menorAsistencia);
-
-    const mayorCapacidad = Math.max(...pasados.map((eve) => eve.capacity));
-    const indiceCapacidad = pasados
+    const mayorCapacidad = Math.max(
+      ...eventosPasados.map((eve) => eve.capacity)
+    );
+    const indiceCapacidad = eventosPasados
       .map((eve) => eve.capacity)
       .findIndex((e) => e == mayorCapacidad);
+
     const tabla1 = document.querySelector("#tabla1");
     tabla1.innerHTML = `
-      <td>${mayorAsistencia}% (${pasados[indiceMayor].name})</td>
-      <td>${menorAsistencia}% (${pasados[indiceMenor].name})</td>
-      <td>${mayorCapacidad} (${pasados[indiceCapacidad].name})</td>
+      <td>${mayorAsistencia}% (${eventosPasados[indiceMayor].name})</td>
+      <td>${menorAsistencia}% (${eventosPasados[indiceMenor].name})</td>
+      <td>${mayorCapacidad} (${eventosPasados[indiceCapacidad].name})</td>
       `;
 
-    // tabla2
     //  RECUPERO DE LAS CATEGORIAS
-
-    const eventosFuturos = data.events.filter((eve) => eve.date > currentDate);
-
-    const categorias = [
+    const categoriasFuturas = [
       ...new Set(eventosFuturos.map((evento) => evento.category)),
     ];
+    const categoriasPasadas = [
+      ...new Set(eventosPasados.map((evento) => evento.category)),
+    ];
 
+    // ganancias
     const gananciaFutura = (eventosFuturos) => {
       return eventosFuturos.reduce(
         (ganancia, evento) =>
@@ -49,14 +53,31 @@ const accessData = fetch(myApiURL)
         0.0
       );
     };
+    const gananciaPasada = (eventosPasados) => {
+      return eventosPasados.reduce(
+        (ganancia, evento) =>
+          ganancia + parseFloat(evento.price) * parseFloat(evento.assistance),
+        0.0
+      );
+    };
 
-    const gananciaFuturaPorCategoria = categorias.map((categoria) => {
+
+    // ganancia por categoria
+    const gananciaFuturaPorCategoria = categoriasFuturas.map((categoria) => {
       const eventosDeUnaCategoria = eventosFuturos.filter((evento) =>
         categoria.includes(evento.category)
       );
       return gananciaFutura(eventosDeUnaCategoria);
     });
+    const gananciaPasadaPorCategoria = categoriasPasadas.map((categoria) => {
+      const eventosDeUnaCategoria = eventosPasados.filter((evento) =>
+        categoria.includes(evento.category)
+      );
+      return gananciaPasada(eventosDeUnaCategoria);
+    });
 
+
+    // Porcentajes
     const porcentajeFuturo = (eventosFuturos) => {
       return eventosFuturos.reduce(
         (porcentaje, evento) =>
@@ -65,8 +86,16 @@ const accessData = fetch(myApiURL)
         0.0
       );
     };
+    const porcentajePasados = (eventosPasados) => {
+      return eventosPasados.reduce(
+        (porcentaje, evento) =>
+          porcentaje +
+          parseFloat(evento.assistance) / parseFloat(evento.capacity),
+        0.0
+      );
+    };
 
-    const porcentajeFuturoPorCategoria = categorias.map((categoria) => {
+    const porcentajeFuturoPorCategoria = categoriasFuturas.map((categoria) => {
       const eventosDeUnaCategoria = eventosFuturos.filter((evento) =>
         categoria.includes(evento.category)
       );
@@ -77,27 +106,53 @@ const accessData = fetch(myApiURL)
         ).toFixed(2) + "%"
       );
     });
+    const porcentajePasadoPorCategoria = categoriasPasadas.map((categoria) => {
+      const eventosDeUnaCategoria = eventosPasados.filter((evento) =>
+        categoria.includes(evento.category)
+      );
+      return (
+        (
+          (100 * porcentajePasados(eventosDeUnaCategoria)) /
+          eventosDeUnaCategoria.length
+        ).toFixed(2) + "%"
+      );
+    });
 
-    const columnasJuntas = [
-      categorias,
+    const columnasJuntasFuturas = [
+      categoriasFuturas,
       gananciaFuturaPorCategoria,
       porcentajeFuturoPorCategoria,
     ];
-    console.log(columnasJuntas);
+    const columnasJuntasPasadas = [
+      categoriasPasadas,
+      gananciaPasadaPorCategoria,
+      porcentajePasadoPorCategoria,
+    ];
+
+
+    // captar el selector
     const tabla2 = document.querySelector("#tabla2");
+    const tabla3 = document.querySelector("#tabla3");
+
+
     let html = "";
-    for (let i = 0; i < categorias.length; i++) {
-      html += `<tr> <td>${columnasJuntas[0][i]}</td>
-       <td>${columnasJuntas[1][i]} </td>
-       <td>${columnasJuntas[2][i]} </td> 
+    for (let i = 0; i < categoriasFuturas.length; i++) {
+      html += `<tr> <td>${columnasJuntasFuturas[0][i]}</td>
+       <td>${columnasJuntasFuturas[1][i]} </td>
+       <td>${columnasJuntasFuturas[2][i]} </td> 
        </tr>`;
     }
     tabla2.innerHTML = html;
-
-    console.log(html);
-    console.log(categorias);
-    console.log(gananciaFuturaPorCategoria);
-    console.log(porcentajeFuturoPorCategoria);
+    
+    html = "";
+    for (let i = 0; i < categoriasPasadas.length; i++) {
+      html += `<tr> <td>${columnasJuntasPasadas[0][i]}</td>
+       <td>${columnasJuntasPasadas[1][i]} </td>
+       <td>${columnasJuntasPasadas[2][i]} </td> 
+       </tr>`;
+    }
+    tabla3.innerHTML = html;
+    
   });
 
 /**
@@ -147,14 +202,14 @@ const accessData = fetch(myApiURL)
  *  Nombre del evento: -->  .name
  *
  ***** 2DA TABLA EVENTOS FUTUROS:
- * Categorías: calcular matriz de categorias
+ * Categorías: calcular matriz de categoriasFuturas
  * Ganancias de todos los eventos de CADA CATEGIRÍA:
  *  --> ganancia = suma(.price * .estimate)  ...solo eventos futuros
  * Porcentaje de asistencia PARA CADA CATEGORIA.
  *  -->  100 * .estimate   / .capacity  --->FUTUROS
  *
  ***** 3ER TABLA EVENTOS PASADOS:
- * Categorías: calcular matriz de categorias
+ * Categorías: calcular matriz de categoriasFuturas
  * Ganancias de todos los eventos de CADA CATEGIRÍA:
  *  --> ganancia = suma(.price * .assistance)  ...solo eventos pasados
  * Porcentaje de asistencia PARA CADA CATEGORIA.
