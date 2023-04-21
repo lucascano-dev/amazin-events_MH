@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/intro.css">
 
 </head>
 
@@ -60,31 +61,35 @@
         </nav>
     </header>
 
-    
+
     <main>
-        <section id="slider">
-            <div class="boton-slider">
+        <section class="titu">
+            <div class="titu-text">
                 <a href="./src/home.html">
-                    <h2><i class="fa-solid fa-circle-arrow-left"></i></h2>
-                </a>
+                <h1 class="">Amazing Events</h1>
+                <p class="">
+                    What does it take to turn an ordinary event into an amazing event? 
+                    <p>
+                        It takes energy, creativity, ingenuity and an over-developed sense of fun! Let us take your goals, ideas, dreams and visions and make them come to life! If it can be done, <strong>Amazing Events®</strong> can do it with style.
+                    </p>
+                </p>
+                <a href="" role="button" class="btn btn-danger"><h3>ABOUT</h3></a>
+            </a>
             </div>
-            <div>
-                <a href="./src/home.html">
-                    <h1>**** I N D E X ****</h1>
-                    <video id="video" src="./assets/video/intro.mp4" type="video/mp4" autoplay muted></video>
-                </a>
+            <div class="videoWrapper">
+                <video autoplay="" loop="" muted="" class="custom-video" poster="./assets/video/foto_inicial1.png">
+                    <source src="./assets/video/intro.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
-            <div class="boton-slider">
-                <a href="./src/home.html">
-                    <h2><i class="fa-solid fa-circle-arrow-right"></i></h2>
-                </a>
-            </div>
-
+            <!-- <div class="overlay"></div> -->
+            <a href="./src/home.html" >
+                <div class="overlay"></div>
+            </a>
         </section>
-
     </main>
 
-    <footer>
+    <!-- <footer>
         <div id="footer-redes-sociales">
             <i class="fa-brands fa-square-instagram alineacion"></i>
             <i class="fa-brands fa-square-facebook alineacion"></i>
@@ -95,19 +100,13 @@
             <h2 class="alineacion">Cohort</h2>
         </div>
 
-    </footer>
-
-    <!-- javascript funciones generales -->
-    <script src="./assets/js/functions.js"></script>
-    
-    <!-- Javascript nuestro -->
-    <script src="./assets/js/main.js"></script>
+    </footer> -->
 
     <!-- Bootstrap 5.3 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-        
+
 
 </body>
 
