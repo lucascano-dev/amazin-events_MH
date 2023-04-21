@@ -40,6 +40,10 @@ body{ /*Esto lo hago para que al momento de hacer el footer quede completamente 
     cursor: pointer;
 }
 
+video{
+    width: 50rem;
+}
+
 #cuerpo-secundario{
     padding: 10px;
     background-color: #f6f6f6;
