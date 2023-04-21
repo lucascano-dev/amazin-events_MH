@@ -2,7 +2,7 @@
 const myApiURL = "https://mindhub-xj03.onrender.com/api/amazing";
 let currentDate = "";
 
-const esPasado = (eve) => eve.date <= currentDate;
+// const esPasado = (eve) => eve.date <= currentDate;
 
 const accessData = fetch(myApiURL)
   .then((response) => response.json())
@@ -53,6 +53,7 @@ const accessData = fetch(myApiURL)
         0.0
       );
     };
+
     const gananciaPasada = (eventosPasados) => {
       return eventosPasados.reduce(
         (ganancia, evento) =>
@@ -134,14 +135,20 @@ const accessData = fetch(myApiURL)
     const tabla2 = document.querySelector("#tabla2");
     const tabla3 = document.querySelector("#tabla3");
 
-
     let html = "";
-    for (let i = 0; i < categoriasFuturas.length; i++) {
+    categoriasFuturas.forEach((categoria,i)=> {
       html += `<tr> <td>${columnasJuntasFuturas[0][i]}</td>
        <td>${columnasJuntasFuturas[1][i]} </td>
        <td>${columnasJuntasFuturas[2][i]} </td> 
        </tr>`;
-    }
+    })
+
+    // for (let i = 0; i < categoriasFuturas.length; i++) {
+    //   html += `<tr> <td>${columnasJuntasFuturas[0][i]}</td>
+    //    <td>${columnasJuntasFuturas[1][i]} </td>
+    //    <td>${columnasJuntasFuturas[2][i]} </td> 
+    //    </tr>`;
+    // }
     tabla2.innerHTML = html;
     
     html = "";
@@ -249,3 +256,6 @@ const accessData = fetch(myApiURL)
  *
  *  Evento con menor porcentaje de asistencia: Sacan el porcentaje de todos los eventos pasados, ordenenlos de menor a mayor, impriman el primero.
  */
+
+
+ 

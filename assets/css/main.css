@@ -1,126 +1,136 @@
-* {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-}
-
-html{
-    height: 100%; /*Altura completa del html: 100%: Esto lo hago para que al momento de hacer el footer quede completamente abajo  (Ver: margin-top:auto en footer)*/
-}
-
-body{ /*Esto lo hago para que al momento de hacer el footer quede completamente abajo (Ver: margin-top:auto en footer)*/
-    display: flex;
-    flex-direction: column;
-    /* min-height: 100%; */
+main {
+  min-height: 80vh;
 }
 
 #slider {
-    padding: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border: 2px solid #d90368;
-    background: linear-gradient(90deg, rgba(217, 3, 104, 0.9) 20%, rgba(217, 3, 104, 0.7) 80%, rgba(217, 3, 104, 0.6) 90%);
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 2px solid #d90368;
+  background: linear-gradient(
+    90deg,
+    rgba(217, 3, 104, 0.9) 20%,
+    rgba(217, 3, 104, 0.7) 80%,
+    rgba(217, 3, 104, 0.6) 90%
+  );
 }
 
 #slider h1 {
-    color: #ffffff;
-    text-shadow: 4px 4px 4px #a8a6a6;
+  color: #ffffff;
+  text-shadow: 4px 4px 4px #a8a6a6;
 }
 
 .boton-slider i {
-    font-size: 50px;
-    transition-duration: 300ms;
-    color: #ffffff;
+  font-size: 50px;
+  transition-duration: 300ms;
+  color: #ffffff;
 }
 
 .boton-slider i:hover {
-    transform: scale(1.2);
-    transition-duration: 300ms;
-    cursor: pointer;
+  transform: scale(1.2);
+  transition-duration: 300ms;
+  cursor: pointer;
 }
 
-video{
-    width: 50rem;
+video {
+  width: 50rem;
 }
 
-#cuerpo-secundario{
-    padding: 10px;
-    background-color: #f6f6f6;
-    padding-bottom: 30px;
-    height: auto;
-
+#cuerpo-secundario {
+  padding: 10px;
+  background-color: hwb(0 87% 5% / 0.614);
+  padding-bottom: 30px;
+  /* height: 80vh; */
 }
 
-#check-search-container{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-
+#check-search-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #check-search {
-    margin: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap:20px;
-
+  margin: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-
-.form-check-input{
-    background-color: #e92a83!important; /*!important Anula un estilo predeterminado y le da prioridad a lo asignado*/
+.form-check-input {
+  background-color: #e92a83 !important; /*!important Anula un estilo predeterminado y le da prioridad a lo asignado*/
 }
 
-.buscador .fa-solid{
-    position:relative;
-    left:30px;
+.buscador .fa-solid {
+  position: relative;
+  left: 30px;
 }
 
-#inputSearch{
-    padding-left:35px;
+#inputSearch {
+  padding-left: 35px;
 }
 
+.card-header {
+  padding: 0px;
+}
 
 #cards {
-    margin:10px;
-    display: flex;
-    flex-direction: row;
-    gap:40px!important;
-    justify-content: space-evenly;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px !important;
+  justify-content: space-evenly;
 }
 
-.card{
-    box-shadow: 10px 10px 3px #c56363;
+.card-img-top {
+  min-height: 200px;
+  object-fit: cover;
+  object-position: center;
 }
 
-.card h1{
-    font-size: 2.3rem;
-    text-shadow: 3px 3px 3px #a8a6a6;
+.card {
+  box-shadow: 10px 10px 3px #c56363;
+  width: 20rem;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
-.card h2{
-    font-size: 2rem;
+.card-detail {
+  display: flex;
+  flex-direction: row;
+
+  max-width: 80%;
+
+  box-shadow: 10px 10px 3px #c56363;
 }
 
-#comprar{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.card h1 {
+  font-size: 2.3rem;
+  text-shadow: 3px 3px 3px #a8a6a6;
 }
 
-#comprar p{
-    font-size: larger;
-    font-weight: bolder;
+.card h2 {
+  font-size: 2rem;
 }
 
-#comprar a{
-    color: #ffffff;
-    font-weight: bolder;
-    background-color: #438670;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 10px;
+#comprar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#comprar p {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+#comprar a {
+  color: #ffffff;
+  font-weight: bolder;
+  background-color: #438670;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
 }

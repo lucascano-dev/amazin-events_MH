@@ -1,6 +1,12 @@
 // Funciones que muestra los detalles de detail.html
 const idElegido = new URLSearchParams(window.location.search).get("id");
 
+/**
+ *  Variable
+ * 
+ * @param myApiURL El string con el url de la api
+ * 
+ */
 const accessData = fetch(myApiURL)
   .then((response) => response.json())
   .then((data) => {
@@ -11,8 +17,8 @@ const accessData = fetch(myApiURL)
     const detalleEvento = document.querySelector("#detail-card");
     detalleEvento.innerHTML = `
     <img src="${elEvento[0].image}" 
-    class="img-fluid col-6" alt="${elEvento[0].description}">
-    <div class="card-body col-6">
+    class="img-fluid col-lg-6 " alt="${elEvento[0].description}">
+    <div class="card-body bg-light ps-3 pb-2">
         <h1>${elEvento[0].name}</h1>
         <li class="list-inline-item me-0">
         <h5>Lugar: ${elEvento[0].place}</h5>
@@ -37,6 +43,7 @@ const accessData = fetch(myApiURL)
 `;
 });
 
+accessData
   /**
    * Información que contiene el evento
    * ----------------------------------

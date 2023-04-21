@@ -17,6 +17,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
     <!-- Nuestros CSS -->
+    <link rel="stylesheet" href="../assets/css/body.css">
     <link rel="stylesheet" href="../assets/css/contact.css">
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/main.css">
@@ -29,7 +30,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid bg-danger-subtle">
-                <a class="navbar-brand" href="./home.html">
+                <a class="navbar-brand" href="../index.html">
                     <img class="img-fluid" src="../assets/img/Logo Amazing Events.png" alt="Logo Amazing Events">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
@@ -51,7 +52,7 @@
                             <a class="nav-link active" aria-current="page" href="#">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link "  href="./stats.html">Stat</a>
+                            <a class="nav-link " href="./stats.html">Stat</a>
                         </li>
 
                     </ul>
@@ -86,28 +87,35 @@
                 <form id="contact-form" class="form-horizontal" role="form">
 
                     <div class="form-group">
-                        <div class="col-sm-12">
+                        <i class="fa-solid fa-user"></i>
+                        <div class="col-sm-10">
                             <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value=""
                                 required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <div class="col-sm-12">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="col-sm-10">
                             <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email"
                                 value="" required>
                         </div>
                     </div>
 
-                    <textarea class="form-control" 
-                    rows="10" placeholder="MESSAGE" name="message" required></textarea>
+                    <div class="form-group">
+                        <i class="fa-solid fa-file-pen"></i>
+                        <textarea class="form-control col-10" rows="6" placeholder="MESSAGE" name="message"
+                            required></textarea>
+                    </div>
+                    <div class="buttom-send">
+                        <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                            <div class="alt-send-button">
+                                <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+                            </div>
+                        </button>    
+                    </div>
 
-                    <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
-                        <div class="alt-send-button">
-                            <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
-                        </div>
 
-                    </button>
 
                 </form>
 
