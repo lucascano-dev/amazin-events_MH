@@ -15,17 +15,6 @@ const buscador = document.getElementById("inputSearch"); //captura id=inputSarch
 let theCurrentDate = "";    // fecha actual
 let myEvents = [];          // matriz de eventos
 
-
-/**
- * kjfdklsfjdslkfdjsfk
- * @param {*} parametro oflsdkjiflsdfjlsdkfj
- */
-const qqq= (parametro) => {
-
-}
-
-
-
 /**
  * Permite filtrar los eventos según 
  * @param {*} arrayEvents "Array de eventos"
@@ -46,7 +35,6 @@ const retriveEvents = (arrayEvents, isPast) => {
   };
 
   
-
   /**
    * Pinta las categorias en los checkbox
    * @param {*} categoria --> array con las categorias
@@ -70,18 +58,28 @@ const retriveEvents = (arrayEvents, isPast) => {
 
   /**
    * Pinta las card con los eventos ya filtrados
+   * --> En caso que el array no contenga elementos envia 
+   *     un mensaje 'No Matches!' y retorna nada.
+   * --> En caso en si haya algun elemento entonces
+   *     construye un string con cada card.
+   * 
    * @param {*} myEvents Eventos filtrados
    */
   const paintCards = (myEvents) => {
+    if (myEvents.length == 0){
+      myCards.innerHTML = 
+      "<h2 class='display-1 fw-bolder text-center'> No Matches! </h2>";
+      return;
+    }
     myCards.innerHTML = myEvents.reduce((html, evento) => {
       return (
         html +
           `
-          <div class="card col-xs-6 col-md-4 col-lg-3" ">
-              <div class="card-header">
+          <div class="card col-xs-6 col-md-4 col-lg-3 ">
+              <div class="card-header ">
                   <a href="./detail.html">
                       <img src="${evento.image}" 
-                           class="card-img-top"   
+                           class="card-img-top "   
                            alt="${evento.description}">
                   </a>
               </div>
