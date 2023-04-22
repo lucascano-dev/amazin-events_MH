@@ -11,6 +11,7 @@ footer i, footer h2 {
     font-size: 42px;
     transition-duration: 300ms;
     color:#ffffff;
+    
 }
 
 footer h2{
@@ -24,6 +25,7 @@ footer i:hover,footer h2:hover {
 }
 
 #footer-redes-sociales {
+    padding: 0px;
     margin-left: 50px;
     display: flex;
     flex-direction: row;
@@ -38,7 +40,5 @@ footer i:hover,footer h2:hover {
 }
 
 .alineacion {
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+
 }
